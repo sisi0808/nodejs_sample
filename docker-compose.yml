@@ -11,8 +11,6 @@ services:
       - db-data:/var/lib/mysql
     ports:
       - '3306:3306'
-    networks:
-      - backend
 
   node:
     build:
@@ -28,12 +26,8 @@ services:
     working_dir: /app
     ports:
         - "3000:3000"
-    networks: 
-      - backend
     depends_on:
       - mysql
 
-networks:
-  backend:
 volumes:
   db-data:
