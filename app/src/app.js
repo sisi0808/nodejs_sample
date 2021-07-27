@@ -4,6 +4,7 @@ const session = require('express-session');
 const bcrypt = require('bcrypt');
 const app = express();
 
+app.set('views', './src/views')
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 

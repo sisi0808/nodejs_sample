@@ -15,13 +15,13 @@ services:
   node:
     build:
       context: .
-      dockerfile: ./src/Dockerfile
+      dockerfile: ./app/Dockerfile
     image: node-mysql-app
     env_file: ./.env
     environment:
       - TZ=Asia/Tokyo
     volumes:
-      - ./src:/app
+      - ./app:/app
     tty: true
     working_dir: /app
     ports:
